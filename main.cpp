@@ -13,7 +13,7 @@ Additional functions:
 check avg age of goats - accumulate()
 remove old goats - find_if + erase, use any_of to check for more values
 sell herd - clear
-add dogs - fill, merge
+add dogs - fill, copy
 walk goats - for_each
 sort goats - sort
 shuffle herd - shuffle
@@ -96,6 +96,10 @@ int main() {
             case 7:
                 cout << "Add dogs.\n";
                 add_dogs(trip);
+                break;
+            case 8:
+                cout << "Walk Goats.\n";
+                walk_goats(trip);
                 break;
             default:
                 cout << "Invalid selection.\n";
@@ -214,6 +218,7 @@ void add_dogs(list<Goat> &trip) {
     display_trip(merged);
 }
 
+// walk goats for specified number of years, adding to age
 void walk_goats(list<Goat> &trip){
     int yrs;
     cout << "Enter years spent walking the goats: ";
