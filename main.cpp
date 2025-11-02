@@ -106,6 +106,10 @@ int main() {
                 cout << "Paint goats black.\n";
                 paint_goats(trip);
                 break;
+            case 10:
+                cout << "Paint goats black.\n";
+                shuffle_goats(trip);
+                break;
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -127,7 +131,7 @@ int main_menu() {
     cout << "[6] sell herd\n";
     cout << "[7] add dogs\n";
     cout << "[8] walk goats\n";
-    cout << "[9] sort goats\n";
+    cout << "[9] paint goats black\n";
     cout << "[10] shuffle herd\n";
     cout << "[11] find goats of certain color\n";
     cout << "[12] Quit\n";
@@ -231,12 +235,15 @@ void walk_goats(list<Goat> &trip){
     for_each(trip.begin(), trip.end(), [yrs](Goat& g){ g.set_age((g.get_age()+yrs));});
 }
 
+// paint all goats chosen color
 void paint_goats(list<Goat> &trip) {
     string color;
     cout << "Choose color: ";
     cin >> color;
     transform(trip.begin(), trip.end(), trip.begin(), [color](Goat& g) { g.set_color(color); return g; });
 }
+
+// shuffle goats in trip
 void shuffle_goats(list<Goat> &trip) {
     vector<Goat> vec;
     for(auto i = trip.begin(); i != trip.end(); i++) {
