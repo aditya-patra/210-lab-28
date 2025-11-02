@@ -230,8 +230,11 @@ void walk_goats(list<Goat> &trip){
     for_each(trip.begin(), trip.end(), [yrs](Goat& g){ g.set_age((g.get_age()+yrs));});
 }
 
-void steal_another_trip(list<Goat> &trip) {
-    transform(trip.begin(), trip.end(), trip.begin(), [](Goat g) { g.set_color("Black"); return g; });
+void paint_goats(list<Goat> &trip) {
+    string color;
+    cout << "Choose color: ";
+    cin >> color;
+    transform(trip.begin(), trip.end(), trip.begin(), [color](Goat& g) { g.set_color(color); return g; });
 }
 /*
 void shuffle_goats(list<Goat> &trip);
