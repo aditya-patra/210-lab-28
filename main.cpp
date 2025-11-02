@@ -172,13 +172,15 @@ void avg_age(list<Goat> trip) {
     int totalScore = accumulate(ages.begin(), ages.end(), 0);
     cout << "Average goat age: " << totalScore/ages.size() << endl;
 }
-/*
+
 void remove_old_goats(list<Goat> &trip) {
-    auto it = find_if(trip.begin(), trip.end(), 88);
-    if (it != trip.end())
-        cout << "Found the score: " << *it << endl;
-    , [](Goat& g){ return g.get_age(); }
+    while(any_of(trip.begin(), trip.end(), [](Goat& g) { return g.get_age() > 15; })) {
+        auto it = find_if(trip.begin(), trip.end(), [](Goat& g){ return g.get_age() > 15; });
+        if (it != trip.end())
+            trip.erase(it);
+    }
 }
+/*
 void sell_herd(list<Goat> &trip);
 void paint_goats(list<Goat> &trip);
 void walk_goats(list<Goat> &trip);
