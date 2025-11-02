@@ -5,12 +5,13 @@
 #include "Goat.h"
 #include <vector>
 #include <algorithm>
+#include <numeric>
 using namespace std;
 
 /*
 Additional functions: 
 check avg age of goats - accumulate()
-remove old goats - find + erase
+remove old goats - find + erase, use any_of to check for more values
 sell herd - clear
 paint goats - fill
 walk goats - for_each
@@ -164,10 +165,14 @@ void avg_age(list<Goat> trip) {
         ages.push_back(goat.get_age());
     }
     int totalScore = accumulate(ages.begin(), ages.end(), 0);
-    return ages/ages.size();
+    cout << "Average goat age: " << totalScore/ages.size() << endl;
 }
 
-void remove_old_goats(list<Goat> &trip);
+void remove_old_goats(list<Goat> &trip) {
+    auto it = find(trip.begin(), trip.end(), 88);
+    if (it != trip.end())
+        cout << "Found the score: " << *it << endl;
+}
 void sell_herd(list<Goat> &trip);
 void paint_goats(list<Goat> &trip);
 void walk_goats(list<Goat> &trip);
