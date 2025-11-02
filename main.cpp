@@ -30,7 +30,7 @@ void remove_old_goats(list<Goat> &trip);
 void sell_herd(list<Goat> &trip);
 void add_dogs(list<Goat> &trip);
 void walk_goats(list<Goat> &trip);
-void steal_another_trip(list<Goat> &trip);
+void steal_another_trip(list<Goat> &trip, string[], string[]);
 void shuffle_goats(list<Goat> &trip);
 void find_color(list<Goat> &trip);
 void display_trip(list<Goat> trip);
@@ -226,8 +226,15 @@ void walk_goats(list<Goat> &trip){
     for_each(trip.begin(), trip.end(), [yrs](Goat& g){ g.set_age((g.get_age()+yrs));});
 }
 
-void steal_another_trip(list<Goat> &trip) {
-    trip.sort();
+void steal_another_trip(list<Goat> &trip, string names[], string colors[]) {
+    int count;
+    cout << "Enter the number of Goats in the other trip";
+    cin >> count;
+    list<Goat> trip2;
+    for(int i = 0; i < count; i++) {
+        add_goat(trip2, names, colors);
+    }
+
 }
 /*
 void shuffle_goats(list<Goat> &trip);
