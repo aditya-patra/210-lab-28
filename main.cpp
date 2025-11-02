@@ -95,7 +95,7 @@ int main() {
                 break;
             case 7:
                 cout << "Add dogs.\n";
-                sell_herd(trip);
+                add_dogs(trip);
                 break;
             default:
                 cout << "Invalid selection.\n";
@@ -200,7 +200,7 @@ void sell_herd(list<Goat> &trip){
 }
 
 // function adds dogs to chase the goats
-void paint_goats(list<Goat> &trip) {
+void add_dogs(list<Goat> &trip) {
     list<Goat> dogs(3);
     fill(dogs.begin(), dogs.end(), Goat("Doggo", 1, "Black"));
     list<Goat> merged(dogs.size()+trip.size());
