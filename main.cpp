@@ -177,6 +177,7 @@ void avg_age(list<Goat> trip) {
     cout << "Average goat age: " << totalScore/ages.size() << endl;
 }
 
+// function removes goats with age greater than 15
 void remove_old_goats(list<Goat> &trip) {
     while(any_of(trip.begin(), trip.end(), [](Goat& g) { return g.get_age() > 15; })) {
         auto it = find_if(trip.begin(), trip.end(), [](Goat& g){ return g.get_age() > 15; });
@@ -184,8 +185,12 @@ void remove_old_goats(list<Goat> &trip) {
             trip.erase(it);
     }
 }
+
+// function sell herd(clears trip)
+void sell_herd(list<Goat> &trip){
+    trip.clear();
+}
 /*
-void sell_herd(list<Goat> &trip);
 void paint_goats(list<Goat> &trip);
 void walk_goats(list<Goat> &trip);
 void sort_goats(list<Goat> &trip);
