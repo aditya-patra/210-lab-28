@@ -268,5 +268,5 @@ void find_color(list<Goat> &trip) {
     cout << "Enter goat age: ";
     cin >> age;
     Goat temp = Goat(name, age, color);
-    cout << "Has high score: " << (find(trip.begin(), trip.end(), temp) ? "Goat is part of herd" : "Goat is not part of herd") << endl;
+    cout << "Has high score: " << ((find(trip.begin(), trip.end(), temp) != trip.end()) ? "Goat is part of herd" : "Goat is not part of herd") << endl;
 }
