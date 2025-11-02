@@ -218,7 +218,7 @@ void walk_goats(list<Goat> &trip){
     int yrs;
     cout << "Enter years spent walking the goats: ";
     cin >> yrs;
-    for_each(trip.begin(), trip.end(), [](Goat& g, yrs){ g.set_age((g.get_age()+yrs)) });
+    for_each(trip.begin(), trip.end(), [yrs](Goat& g){ g.set_age((g.get_age()+yrs));});
 }
 /*
 void sort_goats(list<Goat> &trip);
