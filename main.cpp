@@ -85,6 +85,10 @@ int main() {
                 cout << "Finding average age.\n";
                 avg_age(trip);
                 break;
+            case 5:
+                cout << "Removing old goats.\n";
+                remove_old_goats(trip);
+                break;
             default:
                 cout << "Invalid selection.\n";
                 break;
