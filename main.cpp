@@ -18,7 +18,7 @@ add dogs - fill, copy
 walk goats - for_each
 paint goats black - transform
 shuffle herd - shuffle
-find goats of certain color - find
+check if goat exists - find
 */
  
 const int SZ_NAMES = 200, SZ_COLORS = 25;
@@ -33,7 +33,7 @@ void add_dogs(list<Goat> &trip);
 void walk_goats(list<Goat> &trip);
 void paint_goats(list<Goat> &trip);
 void shuffle_goats(list<Goat> &trip);
-void find_color(list<Goat> &trip);
+void check_goat(list<Goat> &trip);
 void display_trip(list<Goat> trip);
 int main_menu();
 
