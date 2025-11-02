@@ -93,6 +93,10 @@ int main() {
                 cout << "Selling goats.\n";
                 sell_herd(trip);
                 break;
+            case 7:
+                cout << "Add dogs.\n";
+                sell_herd(trip);
+                break;
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -112,7 +116,7 @@ int main_menu() {
     cout << "[4] check avg age of goats\n";
     cout << "[5] remove old goats\n";
     cout << "[6] sell herd\n";
-    cout << "[7] paint goats\n";
+    cout << "[7] add dogs\n";
     cout << "[8] walk goats\n";
     cout << "[9] sort goats\n";
     cout << "[10] shuffle herd\n";
@@ -202,7 +206,7 @@ void paint_goats(list<Goat> &trip) {
     list<Goat> merged(dogs.size()+trip.size());
     merge(trip.begin(), trip.end(), dogs.begin(), dogs.end(), merged.begin());
     trip = merged;
-    display_trip(trip);
+    display_trip(merged);
 }
 /*
 void walk_goats(list<Goat> &trip);
