@@ -81,6 +81,9 @@ int main() {
                 cout << "Displaying goat data.\n";
                 display_trip(trip);
                 break;
+            case 4:
+                cout << "Finding average age.\n";
+                avg_age(trip);
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -164,12 +167,12 @@ void avg_age(list<Goat> trip) {
     for(auto goat: trip) {
         ages.push_back(goat.get_age());
     }
-    int totalScore = accumulate(ages.begin(), ages.end(), 0);
+    int totalScore = accumulate(ages.begin(), ages.end(), 0, [](Goat& g){ return g.get_age(); });
     cout << "Average goat age: " << totalScore/ages.size() << endl;
 }
 
 void remove_old_goats(list<Goat> &trip) {
-    auto it = find(trip.begin(), trip.end(), 88);
+    auto it = find_if(trip.begin(), trip.end(), 88);
     if (it != trip.end())
         cout << "Found the score: " << *it << endl;
 }
