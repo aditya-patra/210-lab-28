@@ -30,7 +30,7 @@ void remove_old_goats(list<Goat> &trip);
 void sell_herd(list<Goat> &trip);
 void add_dogs(list<Goat> &trip);
 void walk_goats(list<Goat> &trip);
-void steal_another_trip(list<Goat> &trip, string[], string[]);
+void paint_goats(list<Goat> &trip);
 void shuffle_goats(list<Goat> &trip);
 void find_color(list<Goat> &trip);
 void display_trip(list<Goat> trip);
@@ -102,8 +102,8 @@ int main() {
                 walk_goats(trip);
                 break;
             case 9:
-                cout << "Steal Goats.\n";
-                steal_another_trip(trip, names, colors);
+                cout << "Paint goats black.\n";
+                paint_goats(trip);
                 break;
             default:
                 cout << "Invalid selection.\n";
@@ -230,19 +230,8 @@ void walk_goats(list<Goat> &trip){
     for_each(trip.begin(), trip.end(), [yrs](Goat& g){ g.set_age((g.get_age()+yrs));});
 }
 
-void steal_another_trip(list<Goat> &trip, string names[], string colors[]) {
-    int count;
-    cout << "Enter the number of Goats in the other trip";
-    cin >> count;
-    list<Goat> trip2;
-    for(int i = 0; i < count; i++) {
-        add_goat(trip2, names, colors);
-    }
-    list<Goat> merged(trip.size()+trip2.size());
-    sort(trip.begin(), trip.end());
-    sort(trip2.begin(), trip2.end());
-    merge(trip.begin(), trip.end(), trip2.begin(), trip2.end(),trip.size());
-    trip=merged;
+void steal_another_trip(list<Goat> &trip) {
+    transform(scores.begin(), scores.end(), scores.begin(), [](int n) { return n - 1; })
 }
 /*
 void shuffle_goats(list<Goat> &trip);
