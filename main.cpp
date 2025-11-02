@@ -15,7 +15,7 @@ remove old goats - find_if + erase, use any_of to check for more values
 sell herd - clear
 add dogs - fill, copy
 walk goats - for_each
-steal another trip - merge
+paint goats black - transform
 shuffle herd - shuffle
 find goats of certain color - find
 */
@@ -100,6 +100,10 @@ int main() {
             case 8:
                 cout << "Walk Goats.\n";
                 walk_goats(trip);
+                break;
+            case 9:
+                cout << "Steal Goats.\n";
+                steal_another_trip(trip, names, colors);
                 break;
             default:
                 cout << "Invalid selection.\n";
