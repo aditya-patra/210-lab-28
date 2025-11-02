@@ -256,5 +256,17 @@ void shuffle_goats(list<Goat> &trip) {
     }
     trip = temp;
 }
-/*
-void find_color(list<Goat> &trip);*/
+
+//function checks if a goat is part of the herd
+void find_color(list<Goat> &trip) {
+    string name, color;
+    int age;
+    cout << "Enter goat name: ";
+    cin >> name;
+    cout << "Enter goat color: ";
+    cin >> color;
+    cout << "Enter goat age: ";
+    cin >> age;
+    Goat temp = Goat(name, age, color);
+    cout << "Has high score: " << (find(trip.begin(), trip.end(), temp) ? "Goat is part of herd" : "Goat is not part of herd") << endl;
+}
