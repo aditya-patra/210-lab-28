@@ -157,7 +157,12 @@ int select_goat(list<Goat> trp) {
 
 // function uses accumulate to find total goat age and prints average
 void avg_age(list<Goat> trip) {
-    int totalScore = accumulate(trip.begin(), trip.end(), 0);
+    vector<int> ages;
+    for(auto goat: trip) {
+        ages.push_back(goat.get_age());
+    }
+    int totalScore = accumulate(ages.begin(), ages.end(), 0);
+    return ages/ages.size();
 }
 
 void remove_old_goats(list<Goat> &trip);
