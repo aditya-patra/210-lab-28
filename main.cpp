@@ -234,7 +234,11 @@ void steal_another_trip(list<Goat> &trip, string names[], string colors[]) {
     for(int i = 0; i < count; i++) {
         add_goat(trip2, names, colors);
     }
-
+    list<Goat> merged(trip.size()+trip2.size());
+    sort(trip.begin(), trip.end());
+    sort(trip2.begin(), trip2.end());
+    merge(trip.begin(), trip.end(), trip2.begin(), trip2.end(),trip.size());
+    trip=merged;
 }
 /*
 void shuffle_goats(list<Goat> &trip);
