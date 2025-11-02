@@ -15,7 +15,7 @@ remove old goats - find_if + erase, use any_of to check for more values
 sell herd - clear
 add dogs - fill, copy
 walk goats - for_each
-sort goats - sort
+steal another trip - merge
 shuffle herd - shuffle
 find goats of certain color - find
 */
@@ -30,7 +30,7 @@ void remove_old_goats(list<Goat> &trip);
 void sell_herd(list<Goat> &trip);
 void add_dogs(list<Goat> &trip);
 void walk_goats(list<Goat> &trip);
-void sort_goats(list<Goat> &trip);
+void steal_another_trip(list<Goat> &trip);
 void shuffle_goats(list<Goat> &trip);
 void find_color(list<Goat> &trip);
 void display_trip(list<Goat> trip);
@@ -225,7 +225,10 @@ void walk_goats(list<Goat> &trip){
     cin >> yrs;
     for_each(trip.begin(), trip.end(), [yrs](Goat& g){ g.set_age((g.get_age()+yrs));});
 }
+
+void steal_another_trip(list<Goat> &trip) {
+    trip.sort();
+}
 /*
-void sort_goats(list<Goat> &trip);
 void shuffle_goats(list<Goat> &trip);
 void find_color(list<Goat> &trip);*/
