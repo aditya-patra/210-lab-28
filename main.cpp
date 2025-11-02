@@ -112,7 +112,7 @@ int main() {
                 break;
             case 11:
                 cout << "Find a goat.\n";
-                shuffle_goats(trip);
+                check_goat(trip);
                 break;
             default:
                 cout << "Invalid selection.\n";
@@ -262,7 +262,7 @@ void shuffle_goats(list<Goat> &trip) {
 }
 
 //function checks if a goat is part of the herd
-void find_color(list<Goat> &trip) {
+void check_goat(list<Goat> &trip) {
     string name, color;
     int age;
     cout << "Enter goat name: ";
@@ -272,5 +272,5 @@ void find_color(list<Goat> &trip) {
     cout << "Enter goat age: ";
     cin >> age;
     Goat temp = Goat(name, age, color);
-    cout << "Has high score: " << ((find(trip.begin(), trip.end(), temp) != trip.end()) ? "Goat is part of herd" : "Goat is not part of herd") << endl;
+    cout << ((find(trip.begin(), trip.end(), temp) != trip.end()) ? "Goat is part of herd" : "Goat is not part of herd") << endl;
 }
