@@ -16,7 +16,7 @@ sort goats - sort
 shuffle herd - shuffle
 find goats of certain color - find
 */
-
+ 
 const int SZ_NAMES = 200, SZ_COLORS = 25;
 
 int select_goat(list<Goat> trip);
