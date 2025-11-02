@@ -89,6 +89,10 @@ int main() {
                 cout << "Removing old goats.\n";
                 remove_old_goats(trip);
                 break;
+            case 6:
+                cout << "Selling goats.\n";
+                sell_herd(trip);
+                break;
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -101,7 +105,7 @@ int main() {
 }
 
 int main_menu() {
-    cout << "*** GOAT MANAGER 3001 ***\n";
+    cout << "\n\n*** GOAT MANAGER 3001 ***\n";
     cout << "[1] Add a goat\n";
     cout << "[2] Delete a goat\n";
     cout << "[3] List goats\n";
