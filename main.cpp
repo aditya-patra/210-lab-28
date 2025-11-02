@@ -13,7 +13,7 @@ Additional functions:
 check avg age of goats - accumulate()
 remove old goats - find_if + erase, use any_of to check for more values
 sell herd - clear
-paint goats - replace
+add dogs - fill, merge
 walk goats - for_each
 sort goats - sort
 shuffle herd - shuffle
@@ -28,7 +28,7 @@ void add_goat(list<Goat> &trip, string [], string []);
 void avg_age(list<Goat> trip);
 void remove_old_goats(list<Goat> &trip);
 void sell_herd(list<Goat> &trip);
-void paint_goats(list<Goat> &trip);
+void add_dogs(list<Goat> &trip);
 void walk_goats(list<Goat> &trip);
 void sort_goats(list<Goat> &trip);
 void shuffle_goats(list<Goat> &trip);
@@ -195,8 +195,14 @@ void sell_herd(list<Goat> &trip){
     trip.clear();
 }
 
+// function adds dogs to chase the goats
 void paint_goats(list<Goat> &trip) {
-    replace(trip.begin(), trip.end(), [](Goat&g) { if g.get_color() != "Black"; g.set_color("Black");});
+    list<Goat> dogs(3);
+    fill(dogs.begin(), dogs.end(), Goat("Doggo", 1, "Black"));
+    list<Goat> merged(dogs.size()+trip.size());
+    merge(trip.begin(), trip.end(), dogs.begin(), dogs.end(), merged.begin());
+    trip = merged;
+    display_trip(trip);
 }
 /*
 void walk_goats(list<Goat> &trip);
