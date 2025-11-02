@@ -11,7 +11,7 @@ using namespace std;
 /*
 Additional functions: 
 check avg age of goats - accumulate()
-remove old goats - find + erase, use any_of to check for more values
+remove old goats - find_if + erase, use any_of to check for more values
 sell herd - clear
 paint goats - fill
 walk goats - for_each
@@ -194,8 +194,11 @@ void remove_old_goats(list<Goat> &trip) {
 void sell_herd(list<Goat> &trip){
     trip.clear();
 }
+
+void paint_goats(list<Goat> &trip) {
+    fill(trip.begin(), trip.end(), g.set_color("Black"));//[](Goat&g) {g.set_color("Black")});
+}
 /*
-void paint_goats(list<Goat> &trip);
 void walk_goats(list<Goat> &trip);
 void sort_goats(list<Goat> &trip);
 void shuffle_goats(list<Goat> &trip);
