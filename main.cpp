@@ -67,7 +67,7 @@ int main() {
     
     // Goat Manager 3001 Engine
     int sel = main_menu();
-    while (sel != 4) {
+    while (sel != 12) {
         switch (sel) {
             case 1:
                 cout << "Adding a goat.\n";
@@ -84,6 +84,7 @@ int main() {
             case 4:
                 cout << "Finding average age.\n";
                 avg_age(trip);
+                break;
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -163,22 +164,24 @@ int select_goat(list<Goat> trp) {
 
 // function uses accumulate to find total goat age and prints average
 void avg_age(list<Goat> trip) {
+    cout << "Entered func";
     vector<int> ages;
     for(auto goat: trip) {
         ages.push_back(goat.get_age());
     }
-    int totalScore = accumulate(ages.begin(), ages.end(), 0, [](Goat& g){ return g.get_age(); });
+    int totalScore = accumulate(ages.begin(), ages.end(), 0);
     cout << "Average goat age: " << totalScore/ages.size() << endl;
 }
-
+/*
 void remove_old_goats(list<Goat> &trip) {
     auto it = find_if(trip.begin(), trip.end(), 88);
     if (it != trip.end())
         cout << "Found the score: " << *it << endl;
+    , [](Goat& g){ return g.get_age(); }
 }
 void sell_herd(list<Goat> &trip);
 void paint_goats(list<Goat> &trip);
 void walk_goats(list<Goat> &trip);
 void sort_goats(list<Goat> &trip);
 void shuffle_goats(list<Goat> &trip);
-void find_color(list<Goat> &trip);
+void find_color(list<Goat> &trip);*/
