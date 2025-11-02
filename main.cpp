@@ -110,6 +110,10 @@ int main() {
                 cout << "Paint goats black.\n";
                 shuffle_goats(trip);
                 break;
+            case 11:
+                cout << "Find a goat.\n";
+                shuffle_goats(trip);
+                break;
             default:
                 cout << "Invalid selection.\n";
                 break;
