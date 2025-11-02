@@ -213,8 +213,14 @@ void add_dogs(list<Goat> &trip) {
     trip = merged;
     display_trip(merged);
 }
+
+void walk_goats(list<Goat> &trip){
+    int yrs;
+    cout << "Enter years spent walking the goats: ";
+    cin >> yrs;
+    for_each(trip.begin(), trip.end(), [](Goat& g, yrs){ g.set_age((g.get_age()+yrs)) });
+}
 /*
-void walk_goats(list<Goat> &trip);
 void sort_goats(list<Goat> &trip);
 void shuffle_goats(list<Goat> &trip);
 void find_color(list<Goat> &trip);*/
