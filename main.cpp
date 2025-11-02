@@ -196,7 +196,7 @@ void sell_herd(list<Goat> &trip){
 }
 
 void paint_goats(list<Goat> &trip) {
-    replace(trip.begin(), trip.end(), [](Goat&g) {g.set_color("Black")});
+    replace(trip.begin(), trip.end(), [](Goat&g) { if g.get_color != "Black" g.set_color("Black")});
 }
 /*
 void walk_goats(list<Goat> &trip);
