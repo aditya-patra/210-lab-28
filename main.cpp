@@ -13,7 +13,7 @@ Additional functions:
 check avg age of goats - accumulate()
 remove old goats - find_if + erase, use any_of to check for more values
 sell herd - clear
-paint goats - fill
+paint goats - replace
 walk goats - for_each
 sort goats - sort
 shuffle herd - shuffle
@@ -196,7 +196,7 @@ void sell_herd(list<Goat> &trip){
 }
 
 void paint_goats(list<Goat> &trip) {
-    fill(trip.begin(), trip.end(), g.set_color("Black"));//[](Goat&g) {g.set_color("Black")});
+    replace(trip.begin(), trip.end(), [](Goat&g) {g.set_color("Black")});
 }
 /*
 void walk_goats(list<Goat> &trip);
