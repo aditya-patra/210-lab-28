@@ -154,3 +154,16 @@ int select_goat(list<Goat> trp) {
     }
     return input;
 }
+
+// function uses accumulate to find total goat age and prints average
+void avg_age(list<Goat> trip) {
+    int totalScore = accumulate(trip.begin(), trip.end(), 0);
+}
+
+void remove_old_goats(list<Goat> &trip);
+void sell_herd(list<Goat> &trip);
+void paint_goats(list<Goat> &trip);
+void walk_goats(list<Goat> &trip);
+void sort_goats(list<Goat> &trip);
+void shuffle_goats(list<Goat> &trip);
+void find_color(list<Goat> &trip);
