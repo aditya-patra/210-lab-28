@@ -236,6 +236,21 @@ void paint_goats(list<Goat> &trip) {
     cin >> color;
     transform(trip.begin(), trip.end(), trip.begin(), [color](Goat& g) { g.set_color(color); return g; });
 }
+void shuffle_goats(list<Goat> &trip) {
+    int start, end;
+    cout << "Choose starting index: ";
+    cin >> start;
+    cout << "Choose ending index: ";
+    cin >> end;
+    auto is = trip.begin();
+    auto ie = trip.begin();
+    for(int i = 0; i < end; i++) {
+        if(start <= i) {
+            is++;
+        }
+        ie++;
+    }
+    shuffle(is, ie, default_random_engine());
+}
 /*
-void shuffle_goats(list<Goat> &trip);
 void find_color(list<Goat> &trip);*/
