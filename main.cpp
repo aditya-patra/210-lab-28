@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <list>
 #include "Goat.h"
+#include <vector>
 using namespace std;
 
 /*
