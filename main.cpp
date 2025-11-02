@@ -205,7 +205,11 @@ void paint_goats(list<Goat> &trip) {
     fill(dogs.begin(), dogs.end(), Goat("Doggo", 1, "Black"));
     list<Goat> merged(dogs.size()+trip.size());
     copy(trip.begin(), trip.end(), merged.begin());
-    copy(dogs.begin(), dogs.end(), merged.begin()+trip.size());
+    auto temp = merged.begin();
+    for(int i = 0; i < trip.size(); i++) {
+        temp++;
+    }
+    copy(dogs.begin(), dogs.end(), temp);
     trip = merged;
     display_trip(merged);
 }
