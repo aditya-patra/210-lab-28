@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
+#include <random>
 using namespace std;
 
 /*
@@ -241,7 +242,12 @@ void shuffle_goats(list<Goat> &trip) {
     for(auto i = trip.begin(); i != trip.end(); i++) {
         vec.push_back(*i);
     }
-    shuffle(is, ie, default_random_engine());
+    shuffle(vec.begin(), vec.end(), default_random_engine());
+    list<Goat> temp;
+    for(auto i = vec.begin(); i != vec.end(); i++) {
+        temp.push_back(*i);
+    }
+    trip = temp;
 }
 /*
 void find_color(list<Goat> &trip);*/
