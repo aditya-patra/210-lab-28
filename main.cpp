@@ -86,7 +86,15 @@ int main_menu() {
     cout << "[1] Add a goat\n";
     cout << "[2] Delete a goat\n";
     cout << "[3] List goats\n";
-    cout << "[4] Quit\n";
+    cout << "[4] check avg age of goats\n";
+    cout << "[5] remove old goats\n";
+    cout << "[6] sell herd\n";
+    cout << "[7] paint goats\n";
+    cout << "[8] walk goats\n";
+    cout << "[9] sort goats\n";
+    cout << "[10] shuffle herd\n";
+    cout << "[11] find goats of certain color\n";
+    cout << "[12] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
