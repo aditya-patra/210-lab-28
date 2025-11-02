@@ -231,7 +231,7 @@ void walk_goats(list<Goat> &trip){
 }
 
 void steal_another_trip(list<Goat> &trip) {
-    transform(scores.begin(), scores.end(), scores.begin(), [](int n) { return n - 1; })
+    transform(trip.begin(), trip.end(), trip.begin(), [](Goat& g) { g.set_color("Black"); });
 }
 /*
 void shuffle_goats(list<Goat> &trip);
