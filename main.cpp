@@ -22,6 +22,14 @@ const int SZ_NAMES = 200, SZ_COLORS = 25;
 int select_goat(list<Goat> trip);
 void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string [], string []);
+void avg_age(list<Goat> trip);
+void remove_old_goats(list<Goat> &trip);
+void sell_herd(list<Goat> &trip);
+void paint_goats(list<Goat> &trip);
+void walk_goats(list<Goat> &trip);
+void sort_goats(list<Goat> &trip);
+void shuffle_goats(list<Goat> &trip);
+void find_color(list<Goat> &trip);
 void display_trip(list<Goat> trip);
 int main_menu();
 
